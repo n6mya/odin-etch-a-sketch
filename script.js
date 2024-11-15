@@ -1,15 +1,24 @@
 const grid = document.querySelector('#container')
+const resetBtn = document.querySelector('#reset')
 
-for (i = 0; i < 16; i++){
-    const row = document.createElement("div");
-    for (a = 0; a < 16; a++){
-        const column = document.createElement("div");
-        column.setAttribute("id", "column");
-        row.appendChild(column);
-        column.addEventListener('mouseover', () => {
-            column.style.backgroundColor = 'red';
-        });
+function createGrid(reso){
+    for (i = 0; i < reso; i++){
+        const row = document.createElement("div");
+        for (a = 0; a < reso; a++){
+            const column = document.createElement("div");
+            column.setAttribute("id", "column");
+            row.appendChild(column);
+            column.addEventListener('mouseover', () => {
+                column.style.backgroundColor = 'red';
+            });
+        }
+        row.setAttribute("id", "row");
+        grid.appendChild(row);
     }
-    row.setAttribute("id", "row");
-    grid.appendChild(row);
 }
+
+createGrid(16);
+
+/*resetBtn.addEventListener('click', () => {
+    let newSquare = parseInt(prompt('What resolution do you want for the canvas? (1 - 100)'));
+});*/
