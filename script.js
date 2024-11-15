@@ -6,6 +6,9 @@ for (i = 0; i < 16; i++){
         const column = document.createElement("div");
         column.setAttribute("id", "column");
         row.appendChild(column);
+        column.addEventListener('mouseover', () => {
+            column.style.backgroundColor = 'red';
+        });
     }
     row.setAttribute("id", "row");
     grid.appendChild(row);
