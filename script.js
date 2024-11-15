@@ -17,8 +17,15 @@ function createGrid(reso){
     }
 }
 
+function deleteGrid(){
+    while (grid.firstChild){
+        grid.removeChild(grid.firstChild);
+    }
+}
+
 createGrid(16);
 
-/*resetBtn.addEventListener('click', () => {
-    let newSquare = parseInt(prompt('What resolution do you want for the canvas? (1 - 100)'));
-});*/
+resetBtn.addEventListener('click', () => {
+    //let newSquare = parseInt(prompt('What resolution do you want for the canvas? (1 - 100)'));
+    deleteGrid();
+});
