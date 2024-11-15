@@ -26,6 +26,7 @@ function deleteGrid(){
 createGrid(16);
 
 resetBtn.addEventListener('click', () => {
-    //let newSquare = parseInt(prompt('What resolution do you want for the canvas? (1 - 100)'));
+    let newSquare = parseInt(prompt('What resolution do you want for the canvas? (1 - 100)'));
     deleteGrid();
+    createGrid(newSquare);
 });
